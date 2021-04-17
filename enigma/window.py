@@ -1,0 +1,115 @@
+#!/usr/bin/python3
+'''
+   Copyright 2017 Subhadeep Jasu <subhajasu@gmail.com>
+
+   This file is part of Enigma.
+
+    Enigma is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Enigma is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Enigma.  If not, see <http://www.gnu.org/licenses/>.
+'''
+import constants as cn
+import headerbar as hb
+import keyboard  as kb
+import lampboard as lb
+import rotorboard as rb
+import emulator.enigma_machine as em
+
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk, Gdk
+
+
+class Window(Gtk.Window):
+    settings = Gtk.Settings.get_default()
+    def __init__(self):
+        Gtk.Window.__init__(self, title=cn.App.application_name)
+
+        self.settings.set_property("gtk-application-prefer-dark-theme", True)
+
+        hbar = hb.Headerbar()
+        self.set_titlebar(hbar)
+
+        self.rotorboard = rb.Rotorboard()
+        self.rotorboard.make_ui()
+
+        self.lampboard = lb.Lampboard()
+        self.lampboard.make_ui()
+
+        self.keyboard = kb.Keyboard()
+        self.keyboard.make_ui()
+
+        main_grid = Gtk.Grid()
+        main_grid.attach(self.rotorboard, 0, 0, 1, 1)
+        main_grid.attach(self.lampboard, 0, 1, 1, 1)
+        main_grid.attach(self.keyboard, 0, 2, 1, 1)
+
+        self.add(main_grid)
+
+        self._create_enigma_machine()
+
+        self.keyboard.connect("key_button_pressed", self._press_keys)
+        self.keyboard.connect("key_button_released", self._release_keys)
+
+        self.rotorboard.connect("manual_rotate1", self._manual_rotate1)
+        self.rotorboard.connect("manual_rotate2", self._manual_rotate2)
+        self.rotorboard.connect("manual_rotate3", self._manual_rotate3)
+
+    def _create_enigma_machine(self):
+        self.enigma_machine = em.EnigmaMachine()
+        self.enigma_machine.connect_rotor(1, self.enigma_machine.get_rotor_by_name("IIC"), self._rotor_callback1)
+        self.enigma_machine.connect_rotor(2, self.enigma_machine.get_rotor_by_name("I-K"), self._rotor_callback2)
+        self.enigma_machine.connect_rotor(3, self.enigma_machine.get_rotor_by_name("IIIC"), self._rotor_callback3)
+        self.enigma_machine.remap_plugboard('A','X')
+        self.enigma_machine.set_rotor_config(0,0,0)
+
+    def _press_keys(self, keyboard, key_val):
+        new_key = self.enigma_machine.type_alphabet(key_val)
+        self.lampboard.set_lamp_active(new_key, True)
+
+    def _release_keys(self, keyboard, key_val):
+        self.lampboard.set_lamp_active(key_val, False)
+
+    def _rotor_callback1(self, direction):
+        alphabet = self.enigma_machine.get_rotor1_alphabet()
+        self.rotorboard.set_rotor_label3(alphabet)
+        if direction:
+            self.rotorboard.rotate_rotor3_down()
+        else:
+            self.rotorboard.rotate_rotor3_up()
+    
+    def _rotor_callback2(self, direction):
+        alphabet = self.enigma_machine.get_rotor2_alphabet()
+        self.rotorboard.set_rotor_label2(alphabet)
+        if direction:
+            self.rotorboard.rotate_rotor2_down()
+        else:
+            self.rotorboard.rotate_rotor2_up()
+    
+    def _rotor_callback3(self, direction):
+        alphabet = self.enigma_machine.get_rotor3_alphabet()
+        self.rotorboard.set_rotor_label1(alphabet)
+        if direction:
+            self.rotorboard.rotate_rotor1_down()
+        else:
+            self.rotorboard.rotate_rotor1_up()
+
+    def _manual_rotate1(self, rotatorboard, direction):
+        self.enigma_machine.rotate_rotor_1(direction)
+    
+    def _manual_rotate2(self, rotatorboard, direction):
+        self.enigma_machine.rotate_rotor_2(direction)
+    
+    def _manual_rotate3(self, rotatorboard, direction):
+        self.enigma_machine.rotate_rotor_3(direction)
+
+

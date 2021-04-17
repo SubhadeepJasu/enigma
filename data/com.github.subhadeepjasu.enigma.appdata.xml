@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 Allen B -->
+<component type="desktop">
+  <id>com.github.subhadeepjasu.enigma</id>
+  <metadata_license>CC0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>Enigma</name>
+  <summary>An Enigma Machine simulator</summary>
+  <developer_name>Subhadeep Jasu</developer_name>
+  <screenshots>
+      <screenshot type="default">
+          <image>https://raw.githubusercontent.com/subhadeepjasu/enigma/master/screenshot.png</image>
+      </screenshot>
+  </screenshots>
+  <description>
+    <p>An Enigma machine simulator</p>
+  </description>
+  <url type="homepage">https://git.mirko.pm/brombinmirko/Enigma</url>
+  <url type="bugtracker">https://git.mirko.pm/brombinmirko/Enigma/issues/labels/bug</url>
+  <url type="help">https://git.mirko.pm/brombinmirko/Enigma/issues/new</url>
+  <custom>
+     <value key="x-appcenter-color-primary">#645552</value>
+     <value key="x-appcenter-color-primary-text">#EEEDEC</value>
+  </custom>
+</component>
