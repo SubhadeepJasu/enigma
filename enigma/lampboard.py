@@ -24,7 +24,7 @@ from gi.repository import Gtk, Gdk
 
 class Lampboard(Gtk.Grid):
     def make_ui(self):
-        self.key_alphabets = "QWERTYUIOPASDFGHJKLZXCVBNM"
+        self.key_alphabets = "QWERTZUIOASDFGHJKPYXCVBNML"
         self.lamp_array = []
         for key in self.key_alphabets:
             lamp = Gtk.Label(key)
@@ -38,10 +38,10 @@ class Lampboard(Gtk.Grid):
         self.lamp_row_lower = Gtk.Box(spacing = 2)
 
         key_index = 0
-        while key_index < 10:
+        while key_index < 9:
             self.lamp_row_upper.add(self.lamp_array[key_index])
             key_index+=1
-        while (key_index < 19):
+        while (key_index < 17):
             self.lamp_row_middle.add(self.lamp_array[key_index])
             key_index+=1
         while (key_index < 26):

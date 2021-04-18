@@ -16,7 +16,9 @@ install_data = [('share/applications', ['data/com.github.subhadeepjasu.enigma.de
                 ('bin/enigma',['enigma/constants.py']),
                 ('bin/enigma',['enigma/headerbar.py']),
                 ('bin/enigma',['enigma/keyboard.py']),
+                ('bin/enigma',['enigma/rotorboard.py']),
                 ('bin/enigma',['enigma/lampboard.py']),
+                ('bin/enigma',['enigma/plugboard_ui.py']),
                 ('bin/enigma',['enigma/main.py']),
                 ('bin/enigma',['enigma/window.py']),
                 ('bin/enigma',['enigma/__init__.py'])]

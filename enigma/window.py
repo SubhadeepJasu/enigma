@@ -22,6 +22,7 @@ import headerbar as hb
 import keyboard  as kb
 import lampboard as lb
 import rotorboard as rb
+import plugboard_ui as pb
 import emulator.enigma_machine as em
 
 import gi
@@ -48,10 +49,20 @@ class Window(Gtk.Window):
         self.keyboard = kb.Keyboard()
         self.keyboard.make_ui()
 
+        self.plugboard = pb.PlugBoardUI()
+        self.plugboard.make_ui()
+        self.plugboard.set_margin_top(4)
+        self.plugboard.props.height_request = 150
+        self.plugboard.connect("plug_pair_selected", self.remap_plugboard)
+
+        separator = Gtk.Separator()
+
         main_grid = Gtk.Grid()
         main_grid.attach(self.rotorboard, 0, 0, 1, 1)
         main_grid.attach(self.lampboard, 0, 1, 1, 1)
         main_grid.attach(self.keyboard, 0, 2, 1, 1)
+        main_grid.attach(separator, 0, 3, 1, 1)
+        main_grid.attach(self.plugboard, 0, 4, 1, 1)
 
         self.add(main_grid)
 
@@ -69,8 +80,12 @@ class Window(Gtk.Window):
         self.enigma_machine.connect_rotor(1, self.enigma_machine.get_rotor_by_name("IIC"), self._rotor_callback1)
         self.enigma_machine.connect_rotor(2, self.enigma_machine.get_rotor_by_name("I-K"), self._rotor_callback2)
         self.enigma_machine.connect_rotor(3, self.enigma_machine.get_rotor_by_name("IIIC"), self._rotor_callback3)
-        self.enigma_machine.remap_plugboard('A','X')
         self.enigma_machine.set_rotor_config(0,0,0)
+
+    def remap_plugboard (self, plugboard, connected_code):
+        self.enigma_machine.remap_plugboard(connected_code[0], connected_code[1])
+        active_plugs = self.enigma_machine.get_active_plugs()
+        self.plugboard.redraw_plugs(active_plugs)
 
     def _press_keys(self, keyboard, key_val):
         new_key = self.enigma_machine.type_alphabet(key_val)

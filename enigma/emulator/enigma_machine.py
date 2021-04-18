@@ -68,6 +68,9 @@ class EnigmaMachine():
     def remap_plugboard(self, alpha1, alpha2):
         self._plugboard.remap(alpha1, alpha2)
 
+    def get_active_plugs(self):
+        return self._plugboard.get_plugged_entries()
+
     def type_alphabet(self, alphabet):
         plug_in = self._plugboard.get_map(ord(alphabet) - 65)
         if self.rotor1.rotate(True, self._handle_rotate_rotor1):

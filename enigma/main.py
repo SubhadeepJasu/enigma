@@ -37,7 +37,9 @@ class Application(Granite.Application):
 
     def do_activate(self):
         self.win = wn.Window()
-        self.win.set_default_size(500, 500) 
+        self.win.set_default_size(530, 600)
+        self.win.props.width_request = 680
+        self.win.props.resizable = False
         self.win.connect("delete-event", Gtk.main_quit)
         
         self.win.show_all()

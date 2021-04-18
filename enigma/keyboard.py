@@ -30,7 +30,7 @@ class Keyboard(Gtk.Grid):
                       (str,)) 
     }
     def make_ui(self):
-        self.key_alphabets = "QWERTYUIOPASDFGHJKLZXCVBNM"
+        self.key_alphabets = "QWERTZUIOASDFGHJKPYXCVBNML"
         self.key_array = []
         for key in self.key_alphabets:
             btn = Gtk.Button.new_with_label(key)
@@ -46,10 +46,10 @@ class Keyboard(Gtk.Grid):
         self.key_row_lower = Gtk.Box(spacing = 4)
 
         key_index = 0
-        while key_index < 10:
+        while key_index < 9:
             self.key_row_upper.add(self.key_array[key_index])
             key_index+=1
-        while (key_index < 19):
+        while (key_index < 17):
             self.key_row_middle.add(self.key_array[key_index])
             key_index+=1
         while (key_index < 26):
@@ -71,6 +71,7 @@ class Keyboard(Gtk.Grid):
         self.set_hexpand(True)
         self.set_row_spacing(4)
         self.set_margin_top(8)
+        self.set_margin_bottom(8)
 
     def _send_key(self, button, key_val):
         self.emit("key_button_pressed", key_val)
