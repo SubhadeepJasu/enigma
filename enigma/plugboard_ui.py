@@ -38,8 +38,8 @@ class PlugBoardUI(Gtk.Overlay):
             plug_label.get_style_context().add_class("plug-label")
             plug_label.props.height_request = 32
             plug_label.props.width_request = 32
-            plug_socket1 = Gtk.Label("")
-            plug_socket2 = Gtk.Label("")
+            plug_socket1 = Gtk.Box()
+            plug_socket2 = Gtk.Box()
             plug_socket1.get_style_context().add_class("plug-socket")
             plug_socket1.props.height_request = 21
             plug_socket1.props.width_request = 21

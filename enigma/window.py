@@ -55,14 +55,18 @@ class Window(Gtk.Window):
         self.plugboard.props.height_request = 150
         self.plugboard.connect("plug_selected", self.remap_plugboard)
 
-        separator = Gtk.Separator()
+        self.show_plug_board_button = Gtk.Button.new_with_label ("Toggle Plugboard")
+        self.plugboard_revealer = Gtk.Revealer()
+        self.plugboard_revealer.add(self.plugboard)
+
+        self.show_plug_board_button.connect("clicked", self.revealer_handler)
 
         main_grid = Gtk.Grid()
         main_grid.attach(self.rotorboard, 0, 0, 1, 1)
         main_grid.attach(self.lampboard, 0, 1, 1, 1)
         main_grid.attach(self.keyboard, 0, 2, 1, 1)
-        main_grid.attach(separator, 0, 3, 1, 1)
-        main_grid.attach(self.plugboard, 0, 4, 1, 1)
+        main_grid.attach(self.show_plug_board_button, 0, 3, 1, 1)
+        main_grid.attach(self.plugboard_revealer, 0, 4, 1, 1)
 
         self.add(main_grid)
 
@@ -74,6 +78,9 @@ class Window(Gtk.Window):
         self.rotorboard.connect("manual_rotate1", self._manual_rotate1)
         self.rotorboard.connect("manual_rotate2", self._manual_rotate2)
         self.rotorboard.connect("manual_rotate3", self._manual_rotate3)
+    
+    def revealer_handler(self, button):
+        self.plugboard_revealer.props.reveal_child = not self.plugboard_revealer.props.reveal_child
 
     def _create_enigma_machine(self):
         self.enigma_machine = em.EnigmaMachine()
