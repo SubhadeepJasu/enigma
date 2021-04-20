@@ -62,15 +62,15 @@ class Rotorboard(Gtk.Grid):
 
         self._rotor1_visual = Gtk.Label("")
         self._rotor1_visual.get_style_context().add_class("rotor-visual")
-        self._rotor1_visual.props.height_request = 150
+        self._rotor1_visual.props.height_request = 158
         self._rotor1_visual.props.width_request = 6
         self._rotor2_visual = Gtk.Label("")
         self._rotor2_visual.get_style_context().add_class("rotor-visual")
-        self._rotor2_visual.props.height_request = 150
+        self._rotor2_visual.props.height_request = 158
         self._rotor2_visual.props.width_request = 6
         self._rotor3_visual = Gtk.Label("")
         self._rotor3_visual.get_style_context().add_class("rotor-visual")
-        self._rotor3_visual.props.height_request = 150
+        self._rotor3_visual.props.height_request = 158
         self._rotor3_visual.props.width_request = 6
 
         main_box.attach(rotor1_rotate_up_button, 0, 0, 1, 1)

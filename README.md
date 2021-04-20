@@ -2,14 +2,14 @@
   <div align="center">
     <img src="https://i.imgur.com/DKsNFnL.png" width="64">
   </div>
-  <h1 align="center">Elementary Python</h1>
-  <div align="center">Python application template for elementary OS. </div>
+  <h1 align="center">Enigma</h1>
+  <div align="center">A classic 3-rotor Enigma Machine emulator</div>
 </div>
 
 <br/>
 
 <div align="center">
-   <a href="https://github.com/brombinmirko/Enigma/blob/master/LICENSE">
+   <a href="https://github.com/SubhadeepJasu/Enigma/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-GPL--3.0-blue.svg">
    </a>
 </div>

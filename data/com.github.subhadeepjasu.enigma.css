@@ -179,3 +179,24 @@
         opacity: 0.5;
     }
 }
+
+
+.scratch-pad {
+	background: #8a715e;
+	border-radius: 4px;
+    border: 1px solid #a3907c
+}
+
+.scratch-pad > button{
+    background:transparent;
+	border: none;
+	box-shadow: none;
+}
+
+.scratch-pad > button:hover{
+	background: alpha(#fff, 0.1);
+}
+textview text {
+    background:transparent;
+    background-color: #8a715e;
+}

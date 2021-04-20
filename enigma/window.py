@@ -23,6 +23,8 @@ import keyboard  as kb
 import lampboard as lb
 import rotorboard as rb
 import plugboard_ui as pb
+import rotor_selector as rs
+import scratch_pad as sp
 import emulator.enigma_machine as em
 
 import gi
@@ -41,6 +43,7 @@ class Window(Gtk.Window):
         self.set_titlebar(hbar)
 
         self.rotorboard = rb.Rotorboard()
+        self.rotorboard.set_margin_left(8)
         self.rotorboard.make_ui()
 
         self.lampboard = lb.Lampboard()
@@ -61,16 +64,26 @@ class Window(Gtk.Window):
 
         self.show_plug_board_button.connect("clicked", self.revealer_handler)
 
+        self._create_enigma_machine()
+        self.rotor_selector = rs.RotorSelector(self.enigma_machine.get_all_rotor_names(), self.rotor_selection_handler)
+
+
+        self.scratchpad = sp.ScratchPad()
+        self.scratchpad.set_margin_top(8)
+        self.scratchpad.set_margin_right(8)
+        self.scratchpad.connect("batch_encrypt", self._batch_compile_handler)
+
         main_grid = Gtk.Grid()
         main_grid.attach(self.rotorboard, 0, 0, 1, 1)
-        main_grid.attach(self.lampboard, 0, 1, 1, 1)
-        main_grid.attach(self.keyboard, 0, 2, 1, 1)
-        main_grid.attach(self.show_plug_board_button, 0, 3, 1, 1)
-        main_grid.attach(self.plugboard_revealer, 0, 4, 1, 1)
+        main_grid.attach(self.rotor_selector, 1, 0, 1, 1)
+        main_grid.attach(self.scratchpad, 2, 0, 1, 1)
+        main_grid.attach(self.lampboard, 0, 1, 3, 1)
+        main_grid.attach(self.keyboard, 0, 2, 3, 1)
+        main_grid.attach(self.show_plug_board_button, 0, 3, 3, 1)
+        main_grid.attach(self.plugboard_revealer, 0, 4, 3, 1)
+        main_grid.set_column_spacing(8)
 
         self.add(main_grid)
-
-        self._create_enigma_machine()
 
         self.keyboard.connect("key_button_pressed", self._press_keys)
         self.keyboard.connect("key_button_released", self._release_keys)
@@ -82,10 +95,15 @@ class Window(Gtk.Window):
     def revealer_handler(self, button):
         self.plugboard_revealer.props.reveal_child = not self.plugboard_revealer.props.reveal_child
 
+    def rotor_selection_handler(self, rotors):
+        self.enigma_machine.connect_rotor(1, self.enigma_machine.get_rotor_by_name(rotors[0]), self._rotor_callback1)
+        self.enigma_machine.connect_rotor(2, self.enigma_machine.get_rotor_by_name(rotors[1]), self._rotor_callback2)
+        self.enigma_machine.connect_rotor(3, self.enigma_machine.get_rotor_by_name(rotors[2]), self._rotor_callback3)
+
     def _create_enigma_machine(self):
         self.enigma_machine = em.EnigmaMachine()
-        self.enigma_machine.connect_rotor(1, self.enigma_machine.get_rotor_by_name("IIC"), self._rotor_callback1)
-        self.enigma_machine.connect_rotor(2, self.enigma_machine.get_rotor_by_name("I-K"), self._rotor_callback2)
+        self.enigma_machine.connect_rotor(1, self.enigma_machine.get_rotor_by_name("IC"), self._rotor_callback1)
+        self.enigma_machine.connect_rotor(2, self.enigma_machine.get_rotor_by_name("IIC"), self._rotor_callback2)
         self.enigma_machine.connect_rotor(3, self.enigma_machine.get_rotor_by_name("IIIC"), self._rotor_callback3)
         self.enigma_machine.set_rotor_config(0,0,0)
 
@@ -106,6 +124,7 @@ class Window(Gtk.Window):
     def _press_keys(self, keyboard, key_val):
         new_key = self.enigma_machine.type_alphabet(key_val)
         self.lampboard.set_lamp_active(new_key, True)
+        self.scratchpad.append_to_text(new_key)
 
     def _release_keys(self, keyboard, key_val):
         self.lampboard.set_lamp_active(key_val, False)
@@ -144,3 +163,8 @@ class Window(Gtk.Window):
         self.enigma_machine.rotate_rotor_3(direction)
 
 
+    def _batch_compile_handler(self, scratchpad_obj, text):
+        print(text)
+        for alphabet in text:
+            cypher = self.enigma_machine.type_alphabet(alphabet)
+            self.scratchpad.append_to_text(cypher)

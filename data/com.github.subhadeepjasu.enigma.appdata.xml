@@ -5,7 +5,7 @@
   <metadata_license>CC0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>Enigma</name>
-  <summary>An Enigma Machine simulator</summary>
+  <summary>An Enigma Machine emulator</summary>
   <developer_name>Subhadeep Jasu</developer_name>
   <screenshots>
       <screenshot type="default">
@@ -13,7 +13,7 @@
       </screenshot>
   </screenshots>
   <description>
-    <p>An Enigma machine simulator</p>
+    <p>A classic 3-rotor Enigma machine emulator</p>
   </description>
   <url type="homepage">https://git.mirko.pm/brombinmirko/Enigma</url>
   <url type="bugtracker">https://git.mirko.pm/brombinmirko/Enigma/issues/labels/bug</url>
