@@ -144,3 +144,38 @@
 .plug-socket-button-active {
     opacity: 1.0;
 }
+
+.plug-0  { color: #f9c440 }
+.plug-1  { color: #f37329 }
+.plug-2  { color: #ed5353 }
+.plug-3  { color: #a10705 }
+.plug-4  { color: #ad5f00 }
+.plug-5  { color: #d1ff82 }
+.plug-6  { color: #3a9104 }
+.plug-7  { color: #89ffdd }
+.plug-8  { color: #0e9a83 }
+.plug-9  { color: #64baff }
+.plug-10 { color: #0d52bf }
+.plug-11 { color: #7239b3 }
+.plug-12 { color: #fe9ab8 }
+.plug-13 { color: #715344 }
+
+.plug-socket-button-highlight{
+	opacity: 1;
+	color: #ccc;
+	animation: highlight 1.2s linear infinite;
+}
+
+@keyframes highlight {
+    0% {
+        opacity: 0.5;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}

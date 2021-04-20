@@ -53,7 +53,7 @@ class Window(Gtk.Window):
         self.plugboard.make_ui()
         self.plugboard.set_margin_top(4)
         self.plugboard.props.height_request = 150
-        self.plugboard.connect("plug_pair_selected", self.remap_plugboard)
+        self.plugboard.connect("plug_selected", self.remap_plugboard)
 
         separator = Gtk.Separator()
 
@@ -82,10 +82,19 @@ class Window(Gtk.Window):
         self.enigma_machine.connect_rotor(3, self.enigma_machine.get_rotor_by_name("IIIC"), self._rotor_callback3)
         self.enigma_machine.set_rotor_config(0,0,0)
 
-    def remap_plugboard (self, plugboard, connected_code):
-        self.enigma_machine.remap_plugboard(connected_code[0], connected_code[1])
+    def remap_plugboard (self, plugboard, alphabet):
+        self.enigma_machine.plug_plugboard(alphabet, self.plugboard_selection_handler)
+        
+    def plugboard_selection_handler(self, function, alpha1, alpha2):
+        if function == "select_await":
+            self.plugboard.draw_selected_plug(alpha1)
         active_plugs = self.enigma_machine.get_active_plugs()
         self.plugboard.redraw_plugs(active_plugs)
+        if function == "select_complete":
+            self.plugboard.clear_plug_states(alpha1, alpha2)
+            self.plugboard.set_plug_pair_states(alpha1, alpha2)
+        if function == "clear":
+            self.plugboard.clear_plug_states(alpha1, alpha2)
 
     def _press_keys(self, keyboard, key_val):
         new_key = self.enigma_machine.type_alphabet(key_val)

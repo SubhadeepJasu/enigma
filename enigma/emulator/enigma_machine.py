@@ -67,6 +67,9 @@ class EnigmaMachine():
 
     def remap_plugboard(self, alpha1, alpha2):
         self._plugboard.remap(alpha1, alpha2)
+    
+    def plug_plugboard(self, alphabet, callback):
+        self._plugboard.select_plug(alphabet, callback)
 
     def get_active_plugs(self):
         return self._plugboard.get_plugged_entries()
