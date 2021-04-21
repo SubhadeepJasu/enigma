@@ -1,6 +1,6 @@
 <div align="center">
   <div align="center">
-    <img src="data/icons/128/com.github.subhadeepjasu.enigma.svg" width="64">
+    <img src="data/icons/128/com.github.subhadeepjasu.enigma.svg" width="128">
   </div>
   <h1 align="center">Enigma</h1>
   ![screenshot](screenshots/screenshot_home.png)
