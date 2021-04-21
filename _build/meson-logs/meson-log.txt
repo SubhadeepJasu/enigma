@@ -1,0 +1,12 @@
+Build started at 2021-04-21T23:13:41.543923
+Main binary: /usr/bin/python3
+Python system: Linux
+The Meson build system
+Version: 0.49.2
+Source dir: /home/subhadeep/Projects/elementaryOSApps/enigma
+Build dir: /home/subhadeep/Projects/elementaryOSApps/enigma/_build
+Build type: native build
+
+meson.build:34:12: ERROR:  Expecting eof got id.
+os = import os
+            ^

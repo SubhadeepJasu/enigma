@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Enigma
+GenericName=Enigma
+Comment=This is just a python template
+Categories=Education;
+Exec=com.github.subhadeepjasu.enigma
+Icon=com.github.subhadeepjasu.enigma
+Terminal=false
+Type=Application
+X-GNOME-Gettext-Domain=com.github.subhadeepjasu.enigma
+Keywords=Python;

@@ -4,10 +4,10 @@ import glob, os
 from distutils.core import setup
 from subprocess import call
 
-install_data = [('share/applications', ['data/com.github.subhadeepjasu.enigma.desktop']),
-                ('share/metainfo', ['data/com.github.subhadeepjasu.enigma.appdata.xml']),
-                ('share/icons/hicolor/128x128/apps',['data/com.github.subhadeepjasu.enigma.svg']),
-                ('bin/enigma/data',['data/com.github.subhadeepjasu.enigma.css']),
+install_data = [# ('share/applications', ['data/com.github.subhadeepjasu.enigma.desktop']),
+                # ('share/metainfo', ['data/com.github.subhadeepjasu.enigma.appdata.xml']),
+                # ('share/icons/hicolor/128x128/apps',['data/com.github.subhadeepjasu.enigma.svg']),
+                ('bin/enigma/data',['data/Application.css']),
                 ('bin/enigma/data',['data/Floral-Seamless-Pattern-By-Karen-Arnold.svg']),
                 ('bin/enigma/emulator/components',['enigma/emulator/components/plugboard.py']),
                 ('bin/enigma/emulator/components',['enigma/emulator/components/reflector.py']),
