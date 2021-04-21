@@ -38,5 +38,6 @@ sudo ninja install
 com.github.subhadeepjasu.enigma
 ```
 
-<sup>**Based on**: Elementary Python Template by Mirko Brombin</sup>
+<sup>**Based on**: [Elementary Python Template](https://github.com/mirkobrombin/ElementaryPython) by Mirko Brombin</sup>
+<br>
 <sup>**License**: GNU GPLv3</sup>
