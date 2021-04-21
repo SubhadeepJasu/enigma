@@ -3,9 +3,10 @@
     <img src="data/icons/128/com.github.subhadeepjasu.enigma.svg" width="128">
   </div>
   <h1 align="center">Enigma</h1>
-  ![screenshot](screenshots/screenshot_home.png)
   <div align="center">A classic 3-rotor Enigma Machine emulator</div>
 </div>
+
+![screenshot](screenshots/screenshot_home.png)
 
 <br/>
 
