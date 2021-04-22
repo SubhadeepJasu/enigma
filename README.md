@@ -8,7 +8,9 @@
   </div>
   <div align="center">A classic 3-rotor Enigma Machine emulator</div>
 </div>
-[![Build Status](https://travis-ci.com/SubhadeepJasu/enigma.svg?branch=master)](https://travis-ci.com/SubhadeepJasu/enigma)
+
+[![Build Status](https://travis-ci.com/SubhadeepJasu/enigma.svg?branch=main)](https://travis-ci.com/SubhadeepJasu/enigma)
+
 <br/>
 
 ## Get it on elementary OS Appcenter
