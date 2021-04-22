@@ -3,7 +3,9 @@
     <img src="data/icons/128/com.github.subhadeepjasu.enigma.svg" width="128">
   </div>
   <h1 align="center">Enigma</h1>
-  ![screenshot](screenshots/screenshot_home.png)
+  <div align="center">
+    <img src="screenshots/screenshot_home.png" width="500">
+  </div>
   <div align="center">A classic 3-rotor Enigma Machine emulator</div>
 </div>
 
@@ -36,5 +38,6 @@ sudo ninja install
 com.github.subhadeepjasu.enigma
 ```
 
-<sup>**Based on**: Elementary Python Template by Mirko Brombin</sup>
+<sup>**Based on**: [Elementary Python Template](https://github.com/mirkobrombin/ElementaryPython) by Mirko Brombin</sup>
+<br>
 <sup>**License**: GNU GPLv3</sup>
