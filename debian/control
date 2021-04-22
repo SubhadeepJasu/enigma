@@ -3,6 +3,7 @@ Section: education
 Priority: optional
 Maintainer: Subhadeep Jasu <subhajasu@gmail.com>
 Build-Depends: debhelper (>= 10.5.1),
+               dh-python,
                python3,
                meson
 X-Python3-Version: >= 3.6.9
