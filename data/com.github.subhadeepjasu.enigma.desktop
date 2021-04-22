@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Enigma
 GenericName=Enigma
-Comment=This is just a python template
+Comment=Enigma machine emulator
 Categories=Education;
 Exec=com.github.subhadeepjasu.enigma
 Icon=com.github.subhadeepjasu.enigma
