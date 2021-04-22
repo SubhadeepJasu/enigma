@@ -6,7 +6,7 @@ import subprocess
 
 setup_path = (os.path.dirname(os.path.abspath(sys.argv[0])))
 os.chdir(setup_path)
-os.system('python3 setup.py install')
+os.system('python3 setup_routine_meson.py install')
 
 
 prefix = environ.get('MESON_INSTALL_PREFIX', '/usr/local')

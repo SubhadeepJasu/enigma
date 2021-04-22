@@ -14,7 +14,7 @@ endforeach
 
 # Translate and install our .desktop file so the Applications Menu will see it
 i18n.merge_file (
-    input: meson.project_name () + '.desktop.in',
+    input: meson.project_name () + '.desktop',
     output: meson.project_name () + '.desktop',
     po_dir: join_paths (meson.source_root (), 'po', 'extra'),
     type: 'desktop',
@@ -24,7 +24,7 @@ i18n.merge_file (
 
 # Translate and install our .appdata.xml file so AppCenter will see it
 i18n.merge_file (
-    input: meson.project_name () + '.appdata.xml.in',
+    input: meson.project_name () + '.appdata.xml',
     output: meson.project_name () + '.appdata.xml',
     po_dir: join_paths (meson.source_root (), 'po', 'extra'),
     install: true,
