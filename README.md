@@ -4,11 +4,11 @@
   </div>
   <h1 align="center">Enigma</h1>
   <div align="center">
-    <img src="screenshots/screenshot_home.png" width="500">
+    <img src="screenshots/screenshot.png" width="500">
   </div>
   <div align="center">A classic 3-rotor Enigma Machine emulator</div>
 </div>
-
+[![Build Status](https://travis-ci.com/SubhadeepJasu/enigma.svg?branch=master)](https://travis-ci.com/SubhadeepJasu/enigma)
 <br/>
 
 ## Get it on elementary OS Appcenter
