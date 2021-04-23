@@ -32,7 +32,7 @@
   </description>
 
   <provides>
-      <binary>com.github.hezral.quickword</binary>
+      <binary>com.github.subhadeepjasu.enigma</binary>
   </provides>
   <content_rating type="oars-1.1">
     <content_attribute id="violence-cartoon">none</content_attribute>
@@ -68,7 +68,7 @@
   <url type="help">https://github.com/SubhadeepJasu/enigma/issues/new</url>
 
   <releases>
-​    <release version="1.0.0" date="2021-04-22">
+​    <release version="1.0.0" date="2021-04-23">
 ​      <description>
 ​        <ul>
             <li>Initial Release</li>
