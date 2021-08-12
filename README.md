@@ -7,9 +7,8 @@
     <img src="screenshots/screenshot.png" width="500">
   </div>
   <div align="center">A classic 3-rotor Enigma Machine emulator</div>
+  <div>This app is only for educational purpose. The app merely demonstrate Enigma machine. Enigma encryption is weak as per today's standards.</div>
 </div>
-
-[![Build Status](https://travis-ci.com/SubhadeepJasu/enigma.svg?branch=main)](https://travis-ci.com/SubhadeepJasu/enigma)
 
 <br/>
 

@@ -78,7 +78,7 @@ class PostInstall(install):
 setup(
     name=app_name,  # Required
     license='GNU GPL3',
-    version='0.0.2',  # Required
+    version='1.0.1',  # Required
     url=app_url,  # Optional
     author='Subhadeep Jasu',  # Optional
     author_email='subhajasu@gmail.com',  # Optional

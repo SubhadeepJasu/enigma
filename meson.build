@@ -1,7 +1,7 @@
 # Project name, programming language and version
 project (
     'com.github.subhadeepjasu.enigma',
-    version: '0.0.1',
+    version: '1.0.1',
 )
 
 # GNOME module

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-   Copyright 2017 Subhadeep Jasu <subhajasu@gmail.com>
+   Copyright 2020-2021 Subhadeep Jasu <subhajasu@gmail.com>
 
    This file is part of Enigma.
 

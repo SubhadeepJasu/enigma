@@ -24,7 +24,7 @@ install_data = [('bin/enigma/data',['data/Application.css']),
                 ('bin/enigma',['enigma/__init__.py'])]
 
 setup(  name='Enigma',
-        version='0.0.2',
+        version='1.0.1',
         author='Subhadeep Jasu',
         description='An Enigma Machine simulator',
         url='https://github.com/subhadeepjasu/enigma',

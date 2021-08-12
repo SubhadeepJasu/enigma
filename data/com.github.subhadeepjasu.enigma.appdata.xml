@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2017 Allen B -->
 <component type="desktop">
   <id>com.github.subhadeepjasu.enigma</id>
   <metadata_license>CC0</metadata_license>
@@ -68,6 +67,13 @@
   <url type="help">https://github.com/SubhadeepJasu/enigma/issues/new</url>
   <releases>
     <release version="1.0.0" date="2021-04-23">
+      <description>
+        <ul>
+            <li>Initial Release</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.1" date="2021-04-23">
       <description>
         <ul>
             <li>Initial Release</li>
