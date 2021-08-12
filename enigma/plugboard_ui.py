@@ -89,9 +89,9 @@ class PlugBoardUI(Gtk.Overlay):
             self.plug_buttons.append(plug)
             index+=1
 
-        self.button_row_upper = Gtk.Box(spacing = 27)
-        self.button_row_middle = Gtk.Box(spacing = 27)
-        self.button_row_lower = Gtk.Box(spacing = 27)
+        self.button_row_upper = Gtk.Box(spacing = 33)
+        self.button_row_middle = Gtk.Box(spacing = 33)
+        self.button_row_lower = Gtk.Box(spacing = 33)
 
         key_index = 0
         while key_index < 9:
