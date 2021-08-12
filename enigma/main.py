@@ -51,6 +51,8 @@ app = Application()
 style_provider = Gtk.CssProvider()
 if launch_dir == "/usr/local/bin":
     style_provider.load_from_path(launch_dir + "/enigma/data/Application.css")
+elif launch_dir == "/app/bin":
+    style_provider.load_from_path(launch_dir + "/enigma/data/Application.css")
 else:
     style_provider.load_from_path("data/Application.css")
 Gtk.StyleContext.add_provider_for_screen(

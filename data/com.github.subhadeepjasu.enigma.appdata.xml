@@ -13,7 +13,8 @@
       </screenshot>
   </screenshots>
   <description>
-    <p>A classic 3-rotor Enigma machine emulator.</p>
+    <p>A classic 3-rotor Enigma machine emulator. This app is only for educational purpose. Enigma encryption is
+    very weak compared to today's standards</p>
     <p>How to use:</p>
     <ul>
       <li>Select, arrange or turn the rotors to a starting combination</li>
@@ -30,7 +31,6 @@
       <li>A plugboard to swap alphabets, first introduced in Army Enigma I (1930)</li>
     </ul>
   </description>
-
   <provides>
       <binary>com.github.subhadeepjasu.enigma</binary>
   </provides>
@@ -66,15 +66,14 @@
   <url type="homepage">https://github.com/SubhadeepJasu/enigma</url>
   <url type="bugtracker">https://github.com/SubhadeepJasu/enigma/issues/labels/bug</url>
   <url type="help">https://github.com/SubhadeepJasu/enigma/issues/new</url>
-
   <releases>
-​    <release version="1.0.0" date="2021-04-23">
-​      <description>
-​        <ul>
+    <release version="1.0.0" date="2021-04-23">
+      <description>
+        <ul>
             <li>Initial Release</li>
         </ul>
-​      </description>
-​    </release>
+      </description>
+    </release>
 ​  </releases>
   <custom>
      <value key="x-appcenter-color-primary">#57392D</value>

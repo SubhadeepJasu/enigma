@@ -8,4 +8,4 @@ Icon=com.github.subhadeepjasu.enigma
 Terminal=false
 Type=Application
 X-GNOME-Gettext-Domain=com.github.subhadeepjasu.enigma
-Keywords=Python;
+Keywords=Python,Cypher,Rotor;

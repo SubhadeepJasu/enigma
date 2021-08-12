@@ -7,6 +7,7 @@ __pycache__/
 .Python
 build/
 _build/
+.flatpak-builder/
 develop-eggs/
 dist/
 downloads/
@@ -31,4 +32,3 @@ venv/
 ENV/
 env.bak/
 venv.bak/
-

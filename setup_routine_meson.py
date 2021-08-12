@@ -24,10 +24,10 @@ install_data = [('bin/enigma/data',['data/Application.css']),
                 ('bin/enigma',['enigma/__init__.py'])]
 
 setup(  name='Enigma',
-        version='0.0.1',
+        version='0.0.2',
         author='Subhadeep Jasu',
         description='An Enigma Machine simulator',
-        url='https://git.mirko.pm/subhadeepjasu/Enigma',
+        url='https://github.com/subhadeepjasu/enigma',
         license='GNU GPL3',
         scripts=['com.github.subhadeepjasu.enigma'],
         packages=['enigma'],
