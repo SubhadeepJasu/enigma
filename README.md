@@ -53,4 +53,4 @@ com.github.subhadeepjasu.enigma
 <br>
 <sup>**License**: GNU GPLv3</sup>
 <br>
-<sup>© Copyright 2017-2022 Subhadeep Jasu</sup>
+<sup>© Copyright 2021-2022 Subhadeep Jasu</sup>
