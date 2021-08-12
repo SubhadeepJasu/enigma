@@ -10,6 +10,8 @@
   <div>This app is only for educational purpose. The app merely demonstrate Enigma machine. Enigma encryption is weak as per today's standards.</div>
 </div>
 
+![elementary flatpak build status](https://github.com/SubhadeepJasu/enigma/actions/workflows/ci.yml/badge.svg)
+
 <br/>
 
 ## Get it on elementary OS Appcenter
@@ -50,3 +52,5 @@ com.github.subhadeepjasu.enigma
 <sup>**Based on**: [Elementary Python Template](https://github.com/mirkobrombin/ElementaryPython) by Mirko Brombin</sup>
 <br>
 <sup>**License**: GNU GPLv3</sup>
+<br>
+<sup>© Copyright 2017-2022 Subhadeep Jasu</sup>
