@@ -32,6 +32,14 @@ git clone https://github.com/SubhadeepJasu/enigma.git
 cd enigma
 ```
 Compile, install and start Enigma on your system
+
+Using flatpak
+```
+flatpak-builder build com.github.subhadeepjasu.enigma.yml --user --install --force-clean
+flatpak run com.github.subhadeepjasu.enigma
+```
+
+Natively
 ```
 meson _build --prefix=/usr
 cd _build
