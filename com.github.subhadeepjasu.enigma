@@ -23,14 +23,14 @@ import sysconfig
 
 # Get launch script dir
 launch_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-print ("os_launch_dir" + launch_dir);
+# print ("os_launch_dir: " + launch_dir);
 
 # Check Flatpak
 flatpak_sandbox = os.path.isfile("/.flatpak-info")
-if flatpak_sandbox:
-    print ("Flatpak detected")
-else:
-    print ("Meson build detected")
+# if flatpak_sandbox:
+#     print ("Flatpak detected")
+# else:
+#     print ("Meson build detected")
 # Update sys.path to include modules
 if launch_dir == "/usr/bin":
     if flatpak_sandbox:
