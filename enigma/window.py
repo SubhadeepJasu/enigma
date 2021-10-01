@@ -25,7 +25,7 @@ import rotorboard as rb
 import plugboard_ui as pb
 import rotor_selector as rs
 import scratch_pad as sp
-import emulator.enigma_machine as em
+import emulator as em
 
 import gi
 gi.require_version('Gtk', '3.0')
@@ -91,7 +91,7 @@ class Window(Gtk.Window):
         self.rotorboard.connect("manual_rotate1", self._manual_rotate1)
         self.rotorboard.connect("manual_rotate2", self._manual_rotate2)
         self.rotorboard.connect("manual_rotate3", self._manual_rotate3)
-    
+
     def revealer_handler(self, button):
         self.plugboard_revealer.props.reveal_child = not self.plugboard_revealer.props.reveal_child
 
@@ -109,7 +109,7 @@ class Window(Gtk.Window):
 
     def remap_plugboard (self, plugboard, alphabet):
         self.enigma_machine.plug_plugboard(alphabet, self.plugboard_selection_handler)
-        
+
     def plugboard_selection_handler(self, function, alpha1, alpha2):
         if function == "select_await":
             self.plugboard.draw_selected_plug(alpha1)
@@ -136,7 +136,7 @@ class Window(Gtk.Window):
             self.rotorboard.rotate_rotor3_down()
         else:
             self.rotorboard.rotate_rotor3_up()
-    
+
     def _rotor_callback2(self, direction):
         alphabet = self.enigma_machine.get_rotor2_alphabet()
         self.rotorboard.set_rotor_label2(alphabet)
@@ -144,7 +144,7 @@ class Window(Gtk.Window):
             self.rotorboard.rotate_rotor2_down()
         else:
             self.rotorboard.rotate_rotor2_up()
-    
+
     def _rotor_callback3(self, direction):
         alphabet = self.enigma_machine.get_rotor3_alphabet()
         self.rotorboard.set_rotor_label1(alphabet)
@@ -155,10 +155,10 @@ class Window(Gtk.Window):
 
     def _manual_rotate1(self, rotatorboard, direction):
         self.enigma_machine.rotate_rotor_1(direction)
-    
+
     def _manual_rotate2(self, rotatorboard, direction):
         self.enigma_machine.rotate_rotor_2(direction)
-    
+
     def _manual_rotate3(self, rotatorboard, direction):
         self.enigma_machine.rotate_rotor_3(direction)
 

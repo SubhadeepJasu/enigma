@@ -19,14 +19,26 @@
 '''
 import os
 import sys
+import sysconfig
 
 # Get launch script dir
 launch_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
+print ("os_launch_dir" + launch_dir);
 
+# Check Flatpak
+flatpak_sandbox = os.path.isfile("/.flatpak-info")
+if flatpak_sandbox:
+    print ("Flatpak detected")
+else:
+    print ("Meson build detected")
 # Update sys.path to include modules
 if launch_dir == "/usr/bin":
-    modules_path = "/usr/share/com.github.subhadeepjasu.enigma/enigma"
-    emulator_path = "/usr/share/com.github.subhadeepjasu.enigma/enigma/emulator"
+    if flatpak_sandbox:
+        modules_path = "/usr/share/com.github.subhadeepjasu.enigma/enigma"
+        emulator_path = "/usr/share/com.github.subhadeepjasu.enigma/enigma/emulator"
+    else:
+        modules_path = sysconfig.get_paths()["purelib"] + "/enigma"
+        emulator_path = sysconfig.get_paths()["purelib"] + "/enigma/emulator"
 else:
     modules_path = launch_dir + "/enigma"
     emulator_path = launch_dir + "/enigma/emulator"
@@ -35,11 +47,9 @@ sys.path.insert(0, modules_path)
 sys.path.insert(0, emulator_path)
 
 try:
-    import enigma.main
+    import enigma
 except ImportError:
-    print("Failed to import module main.py!")
+    print("Failed to import module")
     print("Installation was assumed to be at:", modules_path)
     print("Emulator installation was assumed to be at:", emulator_path)
     sys.exit(1)
-
-main.start()

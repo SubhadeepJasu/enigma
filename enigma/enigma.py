@@ -32,7 +32,6 @@ import window as wn
 
 # Get launch script dir
 launch_dir = os.path.dirname(os.path.abspath(sys.argv[0]))
-print ("he")
 
 class Application(Granite.Application):
 
