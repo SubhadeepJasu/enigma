@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-import glob, os 
+import glob, os
 from distutils.core import setup
 from subprocess import call
 
@@ -9,7 +9,7 @@ install_data = [('bin/enigma/data',['data/Application.css']),
                 ('bin/enigma/emulator/components',['enigma/emulator/components/plugboard.py']),
                 ('bin/enigma/emulator/components',['enigma/emulator/components/reflector.py']),
                 ('bin/enigma/emulator/components',['enigma/emulator/components/rotor.py']),
-                ('bin/enigma/emulator',['enigma/emulator/enigma_machine.py']),
+                ('bin/enigma/emulator',['enigma/emulator/emulator.py']),
                 ('bin/enigma',['enigma/constants.py']),
                 ('bin/enigma',['enigma/headerbar.py']),
                 ('bin/enigma',['enigma/keyboard.py']),
@@ -19,6 +19,7 @@ install_data = [('bin/enigma/data',['data/Application.css']),
                 ('bin/enigma',['enigma/rotor_selector.py']),
                 ('bin/enigma',['enigma/scratch_pad.py']),
                 ('bin/enigma',['enigma/plugboard_ui.py']),
+                ('bin/enigma',['enigma/enigma.py']),
                 ('bin/enigma',['enigma/main.py']),
                 ('bin/enigma',['enigma/window.py']),
                 ('bin/enigma',['enigma/__init__.py'])]
@@ -30,6 +31,6 @@ setup(  name='Enigma',
         url='https://github.com/subhadeepjasu/enigma',
         license='GNU GPL3',
         scripts=['com.github.subhadeepjasu.enigma'],
-        packages=['enigma'],
+        packages=['enigma', 'enigma.emulator'],
         data_files=install_data)
 
